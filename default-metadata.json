@@ -1,0 +1,366 @@
+{
+  "version": 36,
+  "tenantid": "IND1814",
+  "mobappid": 7046,
+  "appName": "Warrior",
+  "appDisplayName": "Warrior",
+  "homeScreenTemplate": "<script>\r\n    MyCampusApp.rootScope.animatepage = function(currentstyle) {\r\n      $(\".app-body\").addClass(currentstyle);\r\n    }\r\n    var hideInterval = setInterval(function() {\r\n      var animatecss = $(\"#animatecss\");\r\n      if (!animatecss || animatecss.length <= 0) {\r\n        $.ajax({\r\n          url: \"https://raw.githubusercontent.com/daneden/animate.css/master/animate.css\",\r\n          dataType: \"text\",\r\n          success: function(data) {\r\n            $(\"head\").append(\"<style id='animatecss'>\" + data + \"<\/style>\");\r\n            clearInterval(hideInterval);\r\n          }\r\n        });\r\n      }\r\n    }, 2000);\r\n    if (!MyCampusApp.rootScope.cangelistadded) {\r\n      MyCampusApp.rootScope.$on(\"$routeChangeStart\", function(event, next, current) {\r\n        $(\".app-body\").attr(\"class\", \"app-body animated \");\r\n      });\r\n      MyCampusApp.rootScope.$on(\"$routeChangeSuccess\", function(event, next, current) {\r\n        currentstyle = \"bounceInRight\";\r\n        if (next.loadedTemplateUrl == \"partials/home.html\" && current.loadedTemplateUrl != \"partials/home.html\") {\r\n          currentstyle = \"bounceInLeft\";\r\n        } else if (current.loadedTemplateUrl != \"partials/home.html\") {\r\n          if (next.params.appid == current.params.appid && next.params.appid == next.params.pageid) {\r\n            currentstyle = \"bounceInLeft\";\r\n          }\r\n          if (MyCampusApp.rootScope.ppage) {\r\n            if (MyCampusApp.rootScope.ppage.appid == next.params.appid && MyCampusApp.rootScope.ppage.pageid == next.params.pageid) {\r\n              currentstyle = \"bounceInLeft\";\r\n            }\r\n          }\r\n        }\r\n        $(\".app-body\").addClass(currentstyle);\r\n        $(\".app-body\").addClass(\"animated\");\r\n        MyCampusApp.rootScope.cpage = next.params;\r\n        MyCampusApp.rootScope.ppage = current.params;\r\n      });\r\n      MyCampusApp.rootScope.cangelistadded = true;\r\n    }\r\n  <\/script>\r\n  <style>\r\n    .navbar-app,\r\n    .sidebar,\r\n    #mainSidebar {\r\n      background: none !important;\r\n      border: 0;\r\n    }\r\n    \r\n    .navbar-brand {\r\n      display: none !important;\r\n    }\r\n    \r\n    .navbar-absolute-top .fa-bars,\r\n    .navbar-absolute-top .fa-user {\r\n      color: #7a212e;\r\n    }\r\n    \r\n    #dock {\r\n      background: #000 !important;\r\n      bottom: 0 !important;\r\n    }\r\n    \r\n    .dockicon {\r\n      margin-top: 12px !important;\r\n      margin-right: 8% !important;\r\n    }\r\n    \r\n    .sidebar-scrollable {\r\n      min-height: 100% !important\r\n    }\r\n    \r\n    .list-group {\r\n      margin-bottom: 0 !important;\r\n    }\r\n    \r\n    #appContent {\r\n      height: 100% !important;\r\n      \r\n    }\r\n    \r\n    .fa-bars {\r\n      color: #00502f !important;\r\n    }\r\n\r\n  .navbar-app .btn, .navbar-app .btn-navbar {\r\n    color:#00502f !important;\r\n    text-transform:uppercase;\r\n  }\r\n    \r\n    *\r\n  <\/style>",
+  "middlewareServerUrl": null,
+  "feedbackEmail": "support@unifyed.com",
+  "backgroundurl": "IND1814/background.png",
+  "brandingurl": "IND1814/branding.png",
+  "customStyle": "#branding {\r\n    position: absolute !important;\r\n    top: 30px !important;\r\n    width: 70% !important;\r\n    margin: auto;\r\n    bottom: auto !important;\r\n}\r\nbody {\r\n    position: absolute;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-size: 100% 100% !important;\r\n}\r\n.icon {\r\n    width: 56px !important;\r\n    height: 56px !important;\r\n}\r\n/*.campuseai-Info {\r\n    white-space: nowrap !important;\r\n    text-transform: uppercase;\r\n}*/\r\n#homedata .campuseai-Info {\r\n    width: 56px !important;\r\n    height: 33px !important;\r\n}\r\n.dockicon:after {\r\n    bottom: 0px !important;\r\n}\r\n.dockicon {\r\n    margin-bottom: 25px !important;\r\n}\r\n.blockUI i {\r\n    color: white !important;\r\n}\r\n.promptumenu_nav a.active {\r\n    background: #fff;\r\n    border-radius: 50%;\r\n    width: 10px;\r\n    height: 10px;\r\n}\r\n.promptumenu_nav a {\r\n    background: #ad1a1a;\r\n    border-radius: 50%;\r\n    width: 10px;\r\n    height: 10px;\r\n}\r\n.promptumenu_window {\r\n    overflow: visible !important;\r\n    height: 95% !important;\r\n    margin-top:29%;\r\n}\r\n.promptumenu_nav {\r\n    margin-bottom: 32%;\r\n}\r\n.app-body {\r\n    padding-bottom: 0px !important;\r\n}\r\n\r\n\r\n.blockUI {\r\n    margin: auto !important;\r\n    left: 0px !important;\r\n    right: 0px !important;\r\n    width: auto !important;\r\n}\r\n#homedata .campuseai-Info {\r\n    width: 76px !important;\r\n    margin-left: -10px;\r\n}\r\n@media (min-width: 320px) and (max-width: 480px) {\r\n    .icon {\r\n        width: 56px !important;\r\n        height: 56px !important;\r\n    }\r\n    #homedata .campuseai-Info {\r\n        width: 76px !important;\r\n        margin-left: -10px;\r\n    }\r\n}\r\n@media (min-width: 320px) and (max-width: 568px) {\r\n    .icon {\r\n        width: 75px !important;\r\n        height: 75px !important;\r\n    }\r\n    #homedata .campuseai-Info {\r\n        width: 96px !important;\r\n        font-size: 12px;\r\n        margin-top: 2px;\r\n        margin-left: -10px;\r\n        margin-right: -10px;\r\n        /*margin-left:-10px;*/\r\n    }\r\n}\r\n@media (min-width: 768px) {\r\n    #branding {\r\n        width: 50% !important;\r\n        margin: auto;\r\n    }\r\n    .icon {\r\n        width: 102px !important;\r\n        height: 102px !important;\r\n    }\r\n    #homedata .campuseai-Info {\r\n        width: 120px !important;\r\n        margin-left: -10px;\r\n        margin-right: -10px;\r\n        /*margin-left:-10px;*/\r\n    }\r\n}\r\n\r\n@media all and (orientation: landscape) {\r\n    #branding {\r\n        width: 30% !important;\r\n    }\r\n}\r\na:active {\r\n    opacity: 1 !important;\r\n}\r\n\r\n#loginbtn {\r\n\r\n} \r\n\r\ndiv.backButtonArrow div[aria-label=\"Login\"]:after{\r\ncontent: \"Login\";\r\nposition:absolute !important;\r\ntop:16px;\r\nright:6px;\r\nfont-size:11px;\r\n}\r\ndiv.backButtonArrow div[aria-label=\"Logout\"]:after{\r\ncontent: \"Logout\";\r\nposition:absolute !important;\r\ntop:16px;\r\nright:0px;\r\nfont-size:11px;\r\n}\r\ndiv.backButtonArrow div[aria-label=\"Back\"]:after{\r\ncontent: \"Back\";\r\nposition:absolute !important;\r\ntop:16px;\r\nright:7px;\r\nfont-size:11px;\r\n}\r\n\r\ndiv.sideBarMenu div[aria-label=\"Sidebar Menu\"]:after{\r\ncontent: \"Menu\";\r\nposition:absolute !important;\r\ntop:16px;\r\nright:5px;\r\nfont-size:11px;\r\n}\r\n.btn-group.pull-left.sideBarMenu, .btn-group.pull-right.backButtonArrow{\r\nbottom:6px !important;\r\n}\r\n\r\n\r\n.app {\r\n  background-size: 100% 100% !important;\r\n  }\r\n\r\n\r\n.userProfile{\r\ndisplay:none !important;\r\n}\r\n\r\na.list-group-item.active, a.list-group-item.active:focus, a.list-group-item.active:hover {\r\n \r\n    border-color: #ddd !important;\r\n}\r\n\r\n\r\n    .fa-bars {\r\n      color: #00502f !important;\r\n    }\r\n\r\n  .navbar-app .btn, .navbar-app .btn-navbar {\r\n    color:#00502f !important;\r\n    text-transform:uppercase;\r\n  }\r\n\r\n#homedata .campuseai-Info {\r\n  width: 76px !important;\r\n  margin-left: -10px;\r\n  text-shadow: 0 2px 2px #000;\r\n}\r\n\r\n@media (min-width: 320px) and (max-width: 480px) {\r\n  .icon {\r\n    width: 56px !important;\r\n    height: 56px !important;\r\n  }\r\n  #homedata .campuseai-Info {\r\n    width: 76px !important;\r\n    margin-left: -10px;\r\n  }\r\n}\r\n\r\n@media (min-width: 320px) and (max-width: 568px) {\r\n  .icon {\r\n    width: 75px !important;\r\n    height: 75px !important;\r\n    padding: 5px !important;\r\n  }\r\n  #homedata .campuseai-Info {\r\n    width: 96px !important;\r\n    font-size: 13px;\r\n    margin-top: 2px;\r\n    margin-left: -10px;\r\n    margin-right: -10px;\r\n    line-height: 14px !important;\r\n    height: 30px !important;\r\n    padding: 0 4px !important;\r\n  }\r\n}\r\n\r\n@media (min-width: 768px) {\r\n  #branding {\r\n    width: 35% !important;\r\n    margin: auto;\r\n  }\r\n  .icon {\r\n    width: 102px !important;\r\n    height: 102px !important;\r\n  }\r\n  #homedata .campuseai-Info {\r\n    width: 120px !important;\r\n    margin-left: -10px;\r\n    margin-right: -10px;\r\n    font-weight: bold;\r\n  }\r\n}\r\n\r\n@media all and (orientation:landscape) {\r\n#homedata .campuseai-Info {\r\n    line-height: 12.5px !important;\r\n    font-size: 11px !important;\r\n    height: 25px !important;\r\n  }\r\n}\r\n\r\n@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {\r\n  .icon {\r\n    margin: 0 10px;\r\n  }\r\n  #homedata .campuseai-Info {\r\n    width: 120px !important;\r\n    height: 30px;\r\n    line-height: 14px;\r\n    font-weight: bold;\r\n    margin-left: 0px;\r\n    margin-right: 0px\r\n  }\r\n}\r\n.navbar-app, .sidebar, #mainSidebar { background : #124734 !important; } .navbar-brand, .navbar-absolute-top .btn-navbar { color : #ffffff !important; } .navbar-absolute-bottom .navbar-inverse { background : #124734 !important; } .navbar-absolute-bottom .navbar-inverse { color : #ffffff !important; } .app { background :  !important; } .campuseai-Info { color : #ffcc00 !important; } #mainSidebar .list-group-item { background : #ffffff !important; } #mainSidebar .list-group-item { color : #124734 !important; } #mainSidebar .appgroup { background : #ffffff !important; } #mainSidebar .appgroup { color : #124734 !important; } .btn-primary { background : #124734 !important; } .btn-primary { color :  !important; } .btn-primary { border-color : #124734 !important; } ",
+  "authFunction": "function authFunction(uname, password, $http, $rootScope, success, error) {\r\n\r\n  var authSuccess = success;\r\n  var authError = error;\r\n\r\n  //Colleague Authentication\r\n\r\n  var url = \"https://kryptosmw.kryptosmobile.com/webadapter3/services/authenticate/felician/colleague\";\r\n  var data = {};\r\n  if (window.device) {\r\n    data = \"username=\" + uname + \"&password=\" + password;\r\n  } else {\r\n    url = \"/websimulator/json?url=\" + url;\r\n    data = {\r\n      method: \"POST\",\r\n      body: \"username=\" + uname + \"&password=\" + password\r\n    };\r\n  }\r\n  var authUrl = url;\r\n  var authData = data;\r\n  $rootScope.generateST = function(tgt, service, callback) {\r\n    //Bypassing the ST as there is no service ticket required here..\r\n    callback(tgt);\r\n  };\r\n\r\n  $rootScope.postAPI = function(endpoint, postdata, callback) {\r\n    $.blockUI();\r\n    $rootScope.generateST($rootScope.ticket, endpoint, function(st) {\r\n      var serviceurl = endpoint + \"?ticket=\" + st;\r\n      var url = \"\";\r\n      var proxyMethod = \"POST\";\r\n      var proxyData = postdata;\r\n      if (window.device) {\r\n        url = serviceurl;\r\n      } else {\r\n        url = \"/websimulator/json?url=\" + serviceurl;\r\n        proxyMethod = \"POST\";\r\n        proxyData = {\r\n          method: \"POST\",\r\n          body: postdata\r\n        }\r\n      }\r\n      $http({\r\n        method: proxyMethod,\r\n        url: url,\r\n        data: proxyData\r\n      }).\r\n      success(function(data, status, headers, config) {\r\n        $.unblockUI();\r\n        callback(data, status, headers, config);\r\n      }).\r\n      error(function(data, status, headers, config) {\r\n        $.unblockUI();\r\n        //alert(\"Error in service call : \" + data + \" Status : \" + status);\r\n        if (status == 403) { //Ticket expired.. need to relogin\r\n          $http.post(authUrl, authData).success(function(data, status, headers, config) {\r\n            if (!data.error) {\r\n              $rootScope.ticket = data.ticket;\r\n              /* $rootScope.getAPI($rootScope.middlewareServerUrl + \"/colleagueroles\", function(roles) {\r\n                  if (roles && roles.ROLES && roles.ROLES[0]) {\r\n                      var uroles = [];\r\n                      if (roles.ROLES[0].student == \"Students\") {\r\n                          uroles.push(\"STUDENT\");\r\n                      }\r\n                      if (roles.ROLES[0].faculty == \"Faculty\") {\r\n                          uroles.push(\"FACULTY\");\r\n                      }\r\n                      if (roles.ROLES[0].employee == \"Employees\") {\r\n                          uroles.push(\"EMPLOYEE\");\r\n                      }\r\n                      data.roles = uroles; \r\n                  }\r\n                  console.log(data);\r\n                  \r\n              });*/\r\n\r\n              authSuccess(data);\r\n            } else {\r\n              authSuccess(data);\r\n            }\r\n            $rootScope.postAPI(endpoint, postdata, callback);\r\n          }).error(function(data, status, headers, config) {\r\n            authError(data);\r\n\r\n          });\r\n        }\r\n\r\n      });\r\n\r\n    });\r\n\r\n  };\r\n\r\n  $rootScope.getAPI = function(endpoint, callback) {\r\n    $.blockUI();\r\n    $rootScope.generateST($rootScope.ticket, endpoint, function(st) {\r\n      var serviceurl = endpoint + \"?ticket=\" + st;\r\n      var url = \"\";\r\n      var proxyMethod = \"GET\";\r\n      var proxyData = {};\r\n      if (window.device) {\r\n        url = serviceurl;\r\n      } else {\r\n        url = \"/websimulator/json?url=\" + encodeURIComponent(serviceurl);\r\n        proxyMethod = \"POST\";\r\n        proxyData = {\r\n          method: \"GET\"\r\n        }\r\n      }\r\n      $http({\r\n        method: proxyMethod,\r\n        url: url,\r\n        data: proxyData\r\n      }).\r\n      success(function(data, status, headers, config) {\r\n        $.unblockUI();\r\n        callback(data, status, headers, config);\r\n      }).\r\n      error(function(data, status, headers, config) {\r\n        $.unblockUI();\r\n        //alert(\"Error in service call : \" + data + \" Status : \" + status);\r\n        if (status == 403) { //Ticket expired.. need to relogin\r\n          $http.post(authUrl, authData).success(function(data, status, headers, config) {\r\n            if (!data.error) {\r\n              /* $rootScope.ticket = data.ticket;\r\n               $rootScope.getAPI($rootScope.middlewareServerUrl + \"/colleagueroles\", function(roles) {\r\n                   if (roles && roles.ROLES && roles.ROLES[0]) {\r\n                       var uroles = [];\r\n                       if (roles.ROLES[0].student == \"Students\") {\r\n                           uroles.push(\"STUDENT\");\r\n                       }\r\n                       if (roles.ROLES[0].faculty == \"Faculty\") {\r\n                           uroles.push(\"FACULTY\");\r\n                       }\r\n                       if (roles.ROLES[0].employee == \"Employees\") {\r\n                           uroles.push(\"EMPLOYEE\");\r\n                       }\r\n                       data.roles = uroles;\r\n                   }\r\n                   console.log(data);\r\n                   \r\n               });*/\r\n\r\n              authSuccess(data);\r\n\r\n            } else {\r\n              authSuccess(data);\r\n            }\r\n\r\n            $rootScope.getAPI(endpoint, callback);\r\n          }).error(function(data, status, headers, config) {\r\n            authError(data);\r\n\r\n          });\r\n        }\r\n\r\n      });\r\n\r\n    });\r\n\r\n  };\r\n\r\n\r\n\r\n\r\n  $.blockUI({\r\n    message: '<div style=\"margin: 2px; vertical-align: middle; display: inline-block\"><i class=\"icon-cog icon-spin icon-4x\"><\/i><h3>Authenticating<\/h3><\/div>'\r\n  });\r\n\r\n  $http.post(url, data).success(function(data, status, headers, config) {\r\n    if (!data.error) {\r\n      $rootScope.ticket = data.ticket;\r\n      /*  $rootScope.getAPI($rootScope.middlewareServerUrl + \"/colleagueroles\", function(roles) {\r\n            if (roles && roles.ROLES && roles.ROLES[0]) {\r\n                var uroles = [];\r\n                if (roles.ROLES[0].student == \"Students\") {\r\n                    uroles.push(\"STUDENT\");\r\n                }\r\n                if (roles.ROLES[0].faculty == \"Faculty\") {\r\n                    uroles.push(\"FACULTY\");\r\n                }\r\n                if (roles.ROLES[0].employee == \"Employees\") {\r\n                    uroles.push(\"EMPLOYEE\");\r\n                }\r\n                data.roles = uroles;\r\n            }\r\n            console.log(data);\r\n            \r\n        });*/\r\n      success(data);\r\n    } else {\r\n      success(data);\r\n    }\r\n    $.unblockUI();\r\n  }).error(function(data, status, headers, config) {\r\n    error(data);\r\n    $.unblockUI();\r\n  });\r\n}",
+  "forgotPasswordUrl": null,
+  "reportissueEmail": "support@unifyed.com",
+  "iconWidth": 70,
+  "apps": 
+  [
+    {
+      "id": 96444,
+      "name": "Directory154",
+      "displayname": "About Allen",
+      "logo": "IND1814/Directory154.png",
+      "logourl": "IND1814/Directory154.png",
+      "description": "Directory",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "Directory154",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorDirectory154(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  if (window.device) {\r\n    $.blockUI({\r\n        message: '<div id=\"floatingBarsG\"><div class=\"blockG\" id=\"rotateG_01\"><\/div><div class=\"blockG\" id=\"rotateG_02\"><\/div><div class=\"blockG\" id=\"rotateG_03\"><\/div><div class=\"blockG\" id=\"rotateG_04\"><\/div><div class=\"blockG\" id=\"rotateG_05\"><\/div><div class=\"blockG\" id=\"rotateG_06\"><\/div><div class=\"blockG\" id=\"rotateG_07\"><\/div><div class=\"blockG\" id=\"rotateG_08\"><\/div><\/div><div><\/div>'\r\n      });\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_blank\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.location.href = \"index.html#home\";\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n}",
+          "url": "https://allen.ac.in/aboutus/about-allen.asp"
+        }
+      ]
+    },
+    {
+      "id": 96454,
+      "name": "E2Campus",
+      "displayname": "Apply Online",
+      "logo": "IND1814/E2Campus.png",
+      "logourl": "IND1814/E2Campus.png",
+      "description": "E2 Campus",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "E2Campus",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorE2Campus(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  if (window.device) {\r\n     $.blockUI({\r\n      message: '<div id=\"floatingBarsG\"><div class=\"blockG\" id=\"rotateG_01\"><\/div><div class=\"blockG\" id=\"rotateG_02\"><\/div><div class=\"blockG\" id=\"rotateG_03\"><\/div><div class=\"blockG\" id=\"rotateG_04\"><\/div><div class=\"blockG\" id=\"rotateG_05\"><\/div><div class=\"blockG\" id=\"rotateG_06\"><\/div><div class=\"blockG\" id=\"rotateG_07\"><\/div><div class=\"blockG\" id=\"rotateG_08\"><\/div><\/div><div><\/div>'\r\n    });\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_blank\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.location.href = \"index.html#home\";\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n}",
+          "url": "https://www.allen.ac.in/appsmvc1819/appforms/Login"
+        }
+      ]
+    },
+    {
+      "id": 96510,
+      "name": "Facebook459",
+      "displayname": "Allen Test My Prep",
+      "logo": "IND1814/Facebook459.png",
+      "logourl": "IND1814/Facebook459.png",
+      "description": "Facebook",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "Facebook459",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorFacebook459(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  var plugins = cordova.require(\"cordova/plugin_list\").metadata;\r\n\r\n  if (typeof plugins['com.venkykowshik.startapp'] === \"undefined\") {\r\n\r\n    navigator.notification.alert(\"Please update your app to use this feature\", function() {\r\n      window.location.href = \"index.html#home\";\r\n      $.unblockUI();\r\n      //$location.path(\"/home\");\r\n    }, \"Update required\", \"OK\");\r\n  } else {\r\n    if (window.device.platform == \"iOS\") {\r\n      var iosUri = pagedef.iosuri;\r\n      navigator.startApp.check(iosUri, function(message) { /* success */\r\n          navigator.startApp.start(iosUri, function(message) { /* success */\r\n              $location.path(\"/home\");\r\n              $.unblockUI();\r\n            },\r\n            function(error) { /* error */\r\n              console.log(error);\r\n            });\r\n        },\r\n        function(error) { /* error */\r\n          $scope.loadurl(pagedef.itunesurl);\r\n          $location.path(\"/home\");\r\n          $.unblockUI();\r\n        });\r\n    } else if (window.device.platform == \"Android\") {\r\n      var androidpackage = pagedef.androidpackage\r\n      navigator.startApp.check(androidpackage, function(message) { /* success */\r\n          navigator.startApp.start(androidpackage, function(message) { /* success */\r\n              $location.path(\"/home\");\r\n              $.unblockUI();\r\n            },\r\n            function(error) { /* error */\r\n              navigator.notification.alert(\"Your device isn't compatible with this version\");\r\n              $location.path(\"/home\");\r\n              $.unblockUI();\r\n            });\r\n        },\r\n        function(error) { /* error */\r\n          $scope.loadurl(pagedef.playstoreurl);\r\n          $location.path(\"/home\");\r\n          $.unblockUI();\r\n        });\r\n    } else {\r\n      apprise(\"This feature is not available on Emulator\", {\r\n        \"verify\": false,\r\n        \"textYes\": \"Ok\"\r\n      }, function(r) {});\r\n    }\r\n\r\n\r\n    $scope.loadurl = function(url) {\r\n      if (window.device) {\r\n        $.blockUI();\r\n      }\r\n      var iabRef = window.open(url, device.platform == \"Android\" ? \"_system\" : \"_blank\", \"location=no,hidden=yes\");\r\n      var hideBlockUi = function() {\r\n        iabRef.show();\r\n        $.unblockUI();\r\n      };\r\n      var iabClose = function(data) {\r\n        window.location.href = \"index.html#home\";\r\n        $.unblockUI();\r\n      };\r\n      iabRef.addEventListener(\"exit\", iabClose);\r\n      var loadStop = function(data) {\r\n        hideBlockUi();\r\n      };\r\n      iabRef.addEventListener(\"loadstop\", loadStop);\r\n    }\r\n  }\r\n}",
+          "androidpackage": "series.test.online.com.onlinetestseries",
+          "playstoreurl": "https://play.google.com/store/apps/details?id=series.test.online.com.onlinetestseries",
+          "iosuri": "g",
+          "itunesurl": "d"
+        }
+      ]
+    },
+    {
+      "id": 96458,
+      "name": "Blackboard2",
+      "displayname": "Allen Gates Series",
+      "logo": "IND1814/Blackboard2.png",
+      "logourl": "IND1814/Blackboard2.png",
+      "description": "Blackboard",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "Blackboard2",
+          "pageTemplate": "<div><\/div>",
+          "playstoreurl": "https://play.google.com/store/apps/details?id=gate.series.test.online.com.gateonlinetestseries",
+          "itunesurl": "https://itunes.apple.com/us/app/blackboard/id950424861?mt=8",
+          "iosuri": "bbstudent://",
+          "androidpackage": "gate.series.test.online.com.gateonlinetestseries",
+          "pageprocessor": "function pageprocessorBlackboard2(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  var plugins = cordova.require(\"cordova/plugin_list\").metadata;\r\n\r\n  if (typeof plugins['com.venkykowshik.startapp'] === \"undefined\") {\r\n\r\n    navigator.notification.alert(\"Please update your app to use this feature\", function() {\r\n      window.location.href = \"index.html#home\";\r\n      $.unblockUI();\r\n      //$location.path(\"/home\");\r\n    }, \"Update required\", \"OK\");\r\n  } else {\r\n    if (window.device.platform == \"iOS\") {\r\n      var iosUri = pagedef.iosuri;\r\n      navigator.startApp.check(iosUri, function(message) { /* success */\r\n          navigator.startApp.start(iosUri, function(message) { /* success */\r\n              $location.path(\"/home\");\r\n              $.unblockUI();\r\n            },\r\n            function(error) { /* error */\r\n              console.log(error);\r\n            });\r\n        },\r\n        function(error) { /* error */\r\n          $scope.loadurl(pagedef.itunesurl);\r\n          $location.path(\"/home\");\r\n          $.unblockUI();\r\n        });\r\n    } else if (window.device.platform == \"Android\") {\r\n      var androidpackage = pagedef.androidpackage\r\n      navigator.startApp.check(androidpackage, function(message) { /* success */\r\n          navigator.startApp.start(androidpackage, function(message) { /* success */\r\n              $location.path(\"/home\");\r\n              $.unblockUI();\r\n            },\r\n            function(error) { /* error */\r\n              navigator.notification.alert(\"Your device isn't compatible with this version\");\r\n              $location.path(\"/home\");\r\n              $.unblockUI();\r\n            });\r\n        },\r\n        function(error) { /* error */\r\n          $scope.loadurl(pagedef.playstoreurl);\r\n          $location.path(\"/home\");\r\n          $.unblockUI();\r\n        });\r\n    } else {\r\n      apprise(\"This feature is not available on Emulator\", {\r\n        \"verify\": false,\r\n        \"textYes\": \"Ok\"\r\n      }, function(r) {});\r\n    }\r\n\r\n\r\n    $scope.loadurl = function(url) {\r\n      if (window.device) {\r\n        $.blockUI();\r\n      }\r\n      var iabRef = window.open(url, device.platform == \"Android\" ? \"_system\" : \"_blank\", \"location=no,hidden=yes\");\r\n      var hideBlockUi = function() {\r\n        iabRef.show();\r\n        $.unblockUI();\r\n      };\r\n      var iabClose = function(data) {\r\n        window.location.href = \"index.html#home\";\r\n        $.unblockUI();\r\n      };\r\n      iabRef.addEventListener(\"exit\", iabClose);\r\n      var loadStop = function(data) {\r\n        hideBlockUi();\r\n      };\r\n      iabRef.addEventListener(\"loadstop\", loadStop);\r\n    }\r\n  }\r\n}"
+        }
+      ]
+    },
+    {
+      "id": 96460,
+      "name": "Alertus",
+      "displayname": "Allen Pre PG Series",
+      "logo": "IND1814/Alertus.png",
+      "logourl": "IND1814/Alertus.png",
+      "description": "Alertus",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "Alertus",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorAlertus(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  var plugins = cordova.require(\"cordova/plugin_list\").metadata;\r\n\r\n  if (typeof plugins['com.venkykowshik.startapp'] === \"undefined\") {\r\n\r\n    navigator.notification.alert(\"Please update your app to use this feature\", function() {\r\n      window.location.href = \"index.html#home\";\r\n      $.unblockUI();\r\n      //$location.path(\"/home\");\r\n    }, \"Update required\", \"OK\");\r\n  } else {\r\n    if (window.device.platform == \"iOS\") {\r\n      var iosUri = pagedef.iosuri;\r\n      navigator.startApp.check(iosUri, function(message) { /* success */\r\n          navigator.startApp.start(iosUri, function(message) { /* success */\r\n              $location.path(\"/home\");\r\n              $.unblockUI();\r\n            },\r\n            function(error) { /* error */\r\n              console.log(error);\r\n            });\r\n        },\r\n        function(error) { /* error */\r\n          $scope.loadurl(pagedef.itunesurl);\r\n          $location.path(\"/home\");\r\n          $.unblockUI();\r\n        });\r\n    } else if (window.device.platform == \"Android\") {\r\n      var androidpackage = pagedef.androidpackage\r\n      navigator.startApp.check(androidpackage, function(message) { /* success */\r\n          navigator.startApp.start(androidpackage, function(message) { /* success */\r\n              $location.path(\"/home\");\r\n              $.unblockUI();\r\n            },\r\n            function(error) { /* error */\r\n              navigator.notification.alert(\"Your device isn't compatible with this version\");\r\n              $location.path(\"/home\");\r\n              $.unblockUI();\r\n            });\r\n        },\r\n        function(error) { /* error */\r\n          $scope.loadurl(pagedef.playstoreurl);\r\n          $location.path(\"/home\");\r\n          $.unblockUI();\r\n        });\r\n    } else {\r\n      apprise(\"This feature is not available on Emulator\", {\r\n        \"verify\": false,\r\n        \"textYes\": \"Ok\"\r\n      }, function(r) {});\r\n    }\r\n\r\n\r\n    $scope.loadurl = function(url) {\r\n      if (window.device) {\r\n        $.blockUI();\r\n      }\r\n      var iabRef = window.open(url, device.platform == \"Android\" ? \"_system\" : \"_blank\", \"location=no,hidden=yes\");\r\n      var hideBlockUi = function() {\r\n        iabRef.show();\r\n        $.unblockUI();\r\n      };\r\n      var iabClose = function(data) {\r\n        window.location.href = \"index.html#home\";\r\n        $.unblockUI();\r\n      };\r\n      iabRef.addEventListener(\"exit\", iabClose);\r\n      var loadStop = function(data) {\r\n        hideBlockUi();\r\n      };\r\n      iabRef.addEventListener(\"loadstop\", loadStop);\r\n    }\r\n  }\r\n}",
+          "androidpackage": "prepg.series.test.online.com.prepgonlinetestseries",
+          "playstoreurl": "https://play.google.com/store/apps/details?id=prepg.series.test.online.com.prepgonlinetestseries",
+          "iosuri": "://alertus",
+          "itunesurl": "https://itunes.apple.com/us/app/alertus/id896799884?mt=8"
+        }
+      ]
+    },
+    {
+      "id": 96448,
+      "name": "Foodordering",
+      "displayname": "Dining",
+      "logo": "IND1814/Foodordering.png",
+      "logourl": "IND1814/Foodordering.png",
+      "description": "Food ordering",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "Foodordering",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorFoodordering(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  if (window.device) {\r\n    $.blockUI({\r\n      message: '<div id=\"floatingBarsG\"><div class=\"blockG\" id=\"rotateG_01\"><\/div><div class=\"blockG\" id=\"rotateG_02\"><\/div><div class=\"blockG\" id=\"rotateG_03\"><\/div><div class=\"blockG\" id=\"rotateG_04\"><\/div><div class=\"blockG\" id=\"rotateG_05\"><\/div><div class=\"blockG\" id=\"rotateG_06\"><\/div><div class=\"blockG\" id=\"rotateG_07\"><\/div><div class=\"blockG\" id=\"rotateG_08\"><\/div><\/div><div><\/div>'\r\n    });\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_blank\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.location.href = \"index.html#home\";\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n}",
+          "url": "https://www.dineoncampus.com/felician/where-to-eat"
+        }
+      ]
+    },
+    {
+      "id": 96438,
+      "name": "EmergencyContacts2",
+      "displayname": "Emergency Contacts",
+      "logo": "IND1814/EmergencyContacts2.png",
+      "logourl": "IND1814/EmergencyContacts2.png",
+      "description": "Emergency Contacts",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "EmergencyContacts2",
+          "pageTemplate": "<style>.scrollable-content {     background: #fff !important;   }<\/style> <div class=\"well\" style=\"background:transparent;padding:10px;\"><div class=\"list-group\"> <a class=\"list-group-item active panel-title\" style=\"background:#144332;color:#fff;\">Emergency Number<\/a><a href=\"tel:{{contact.number}}\" class=\"list-group-item\" ng-repeat=\"contact in contacts.Contacts \">{{contact.name}}<i class=\"fa fa-chevron-circle-right pull-right fa-2x\"><\/i><br/><i class=\"fa fa-phone\"><\/i>&nbsp;&nbsp;{{contact.number}}<\/a><\/div><\/div>",
+          "pageprocessor": "function pageprocessorEmergencyContacts2(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {$scope.contacts = $.parseJSON(pagedef.contactdetails);   var data1 = $compile($(pagedef.pageTemplate))($scope);$(\"#appContent\").append(data1);}",
+          "contactdetails": "{\r\n  \"Contacts\": [{\r\n    \"name\": \"SANKALP(H.O.)\",\r\n    \"number\": \"+91-744-2757575\"\r\n  }, {\r\n    \"name\": \"SAMANVAYA(PNCF)\",\r\n    \"number\": \"+91-744-2752600\"\r\n  }, {\r\n    \"name\": \"Admission\",\r\n    \"number\": \"+91-744-2757575\"\r\n  }]\r\n\r\n}"
+        }
+      ]
+    },
+    {
+      "id": 96446,
+      "name": "Events189",
+      "displayname": "Events",
+      "logo": "IND1814/Events189.png",
+      "logourl": "IND1814/Events189.png",
+      "description": "Events",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "Events189",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorEvents189(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  var data1 = $compile($(pagedef.datatemplate))($scope);\r\n  $(\"#appContent\").append(data1);\r\n  $.blockUI({\r\n        message: '<div id=\"floatingBarsG\"><div class=\"blockG\" id=\"rotateG_01\"><\/div><div class=\"blockG\" id=\"rotateG_02\"><\/div><div class=\"blockG\" id=\"rotateG_03\"><\/div><div class=\"blockG\" id=\"rotateG_04\"><\/div><div class=\"blockG\" id=\"rotateG_05\"><\/div><div class=\"blockG\" id=\"rotateG_06\"><\/div><div class=\"blockG\" id=\"rotateG_07\"><\/div><div class=\"blockG\" id=\"rotateG_08\"><\/div><\/div><div><\/div>'\r\n      });\r\n  var rssreaderUrl = \"https://kryptosda.kryptosmobile.com/kryptosds/rss/rssreader\";\r\n  var param = {\r\n    \"url\": pagedef.url\r\n  };\r\n  $http.post(rssreaderUrl, param, '').success(function(data, status, headers, config) {\r\n    $scope.feeds = data.feed.entries;\r\n    $rootScope.feeds = data.feed.entries;\r\n    $.unblockUI();\r\n  }).error(function(error, status, header, config) {\r\n    alert(JSON.stringify(error));\r\n    $.unblockUI();\r\n  });\r\n  $scope.openFeed = function(index) {\r\n    $rootScope.feedDetails = $scope.feeds[index];\r\n    $location.path(\"/app/Events189/Events189Details\");\r\n  }\r\n  $scope.trustHtml = function(dt) {\r\n    return $sce.trustAsHtml(dt);\r\n  }\r\n}",
+          "url": "https://www.felician.edu/felician-university-events",
+          "datatemplate": "<div ng-repeat=\"f in feeds\" style=\"background:#fff;background-color:#fff;padding:15px;border-bottom:1px solid #000;\" ng-click=\"openFeed($index)\">\r\n  <div style=\"font-size:16px;\" ng-bind-html=\"trustHtml(f.title); \"><\/div>\r\n  <!--<div style=\"font-size:16px;\">{{f.title}}<\/div>-->\r\n  <div class='small' ng-bind-html=\"trustHtml(f.pubDate); \"><\/div>\r\n<\/div>"
+        },
+        {
+          "pageid": "Events189Details",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorEvents189Details(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  var data1 = $compile($(pagedef.datatemplate))($scope);\r\n  $(\"#appContent\").append(data1);\r\n  $scope.feedDetails = $rootScope.feedDetails;\r\n  $scope.openWebPage = function(url) {\r\n    window.open(url, \"_blank\", \"location=no\");\r\n  }\r\n  $scope.trustHtml = function(dt) {\r\n    return $sce.trustAsHtml(dt);\r\n  }\r\n}",
+          "datatemplate": "<style>\r\n  .scrollable-content {\r\n    background: #fff !important;\r\n  }\r\n<\/style>\r\n<div style=\"padding:15px;height:100%;background:#fff;background-color:#fff;\">\r\n  <div style=\"font-size:16px\">{{feedDetails.title}}<\/div>\r\n  <div class='small' ng-bind-html=\"trustHtml(feedDetails.pubDate); \"><\/div>\r\n  <hr>\r\n  <div style=\"font-size:14px\" ng-bind-html=\"trustHtml(feedDetails.content); \"><\/div>\r\n  <br>\r\n  <div class=\"btn btn-primary btn-block\" ng-click=\"openWebPage(feedDetails.link);\">Open Link<\/div>\r\n<\/div>\r\n  <br>\r\n    <br>"
+        }
+      ]
+    },
+    {
+      "id": 96442,
+      "name": "Facebook289",
+      "displayname": "Facebook",
+      "logo": "IND1814/Facebook289.png",
+      "logourl": "IND1814/Facebook289.png",
+      "description": "Facebook",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "Facebook289",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorFacebook289(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  if (window.device) {\r\n    $.blockUI({\r\n        message: '<div id=\"floatingBarsG\"><div class=\"blockG\" id=\"rotateG_01\"><\/div><div class=\"blockG\" id=\"rotateG_02\"><\/div><div class=\"blockG\" id=\"rotateG_03\"><\/div><div class=\"blockG\" id=\"rotateG_04\"><\/div><div class=\"blockG\" id=\"rotateG_05\"><\/div><div class=\"blockG\" id=\"rotateG_06\"><\/div><div class=\"blockG\" id=\"rotateG_07\"><\/div><div class=\"blockG\" id=\"rotateG_08\"><\/div><\/div><div><\/div>'\r\n      });\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_blank\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.location.href = \"index.html#home\";\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n}",
+          "url": "https://www.facebook.com/ALLENKota"
+        }
+      ]
+    },
+    {
+      "id": 96456,
+      "name": "PrayerRequest",
+      "displayname": "Feedback",
+      "logo": "IND1814/PrayerRequest.png",
+      "logourl": "IND1814/PrayerRequest.png",
+      "description": "Prayer Request",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "PrayerRequest",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorPrayerRequest(pagedef, $scope, $routeParams,\r\n  $compile, $http, $rootScope, $sce, $window, $location) {\r\n  var data1 = $compile($(pagedef.datatemplate))($scope);\r\n  $(\"#appContent\").append(data1);\r\n  $scope.textname = \"\";\r\n  $scope.textemail = \"\";\r\n  $scope.textprayer = \"\";\r\n  $scope.sendText = function() {\r\n\r\n\r\n    if ($scope.textname != \"\" || $scope.textname == undefined) {\r\n      var nameContent = $scope.textname;\r\n    } else {\r\n      var nameContent = \"Name\"\r\n      navigator.notification.alert(\"Please fill up the Name\",\r\n        null, \"Alert\", \"OK\")\r\n      return;\r\n    }\r\n    if ($scope.textemail != \"\" || $scope.textname == undefined) {\r\n      var emailContent = $scope.textemail;\r\n    } else {\r\n      var emailContent = \"Email\"\r\n      navigator.notification.alert(\r\n        \"Please add your email address\", null, \"Alert\",\r\n        \"OK\")\r\n      return;\r\n    }\r\n\r\n    if ($scope.textprayer != \"\") {\r\n      var prayerContent = $scope.textprayer;\r\n    } else {\r\n      var prayerContent = \"Prayer request\"\r\n      navigator.notification.alert(\"Please fill up the Prayer\",\r\n        null, \"Alert\", \"OK\")\r\n      return;\r\n    }\r\n\r\n    $.blockUI({\r\n      message: '<div id=\"floatingBarsG\"><div class=\"blockG\" id=\"rotateG_01\"><\/div><div class=\"blockG\" id=\"rotateG_02\"><\/div><div class=\"blockG\" id=\"rotateG_03\"><\/div><div class=\"blockG\" id=\"rotateG_04\"><\/div><div class=\"blockG\" id=\"rotateG_05\"><\/div><div class=\"blockG\" id=\"rotateG_06\"><\/div><div class=\"blockG\" id=\"rotateG_07\"><\/div><div class=\"blockG\" id=\"rotateG_08\"><\/div><\/div><div><\/div>'\r\n    });\r\n    emailBody = \"\";\r\n    emailBody = \"<html><body>\";\r\n    emailBody += \"<div>Details: <br>Name: \" + nameContent +\r\n      \"<br>Email: \" + emailContent + \"<\/div><br/>\";\r\n    emailBody += \"<div>\" + prayerContent + \"<\/div><br/>\";\r\n    emailBody += \"<\/body><\/html>\";\r\n    var emailData = {\r\n      'to': 'studentlife@ciu.edu',\r\n      'subject': 'Prayer request reported',\r\n      'body': emailBody,\r\n      'from': 'donotreply@prayerrequest.com'\r\n    };\r\n    var xhr = $.ajax({\r\n      url: \"https://kryptos.kryptosmobile.com/gateway/CEAI/kryptosemailsender\",\r\n      contentType: 'application/json',\r\n      type: \"POST\",\r\n      headers: {\r\n        'licenseKey': 'UjpIaWVDVzpTOjE0NDk0ODk2MzUxMzE6VTpha0BjYW1wdXNlYWkub3JnOlQ6NDpQOjI4Ng=='\r\n      },\r\n      data: JSON.stringify(emailData),\r\n      success: function(data) {\r\n        $.unblockUI();\r\n        if (data.response == \"Successful\") {\r\n          $.unblockUI();\r\n          navigator.notification.alert(\r\n            \"Your request has been submitted \",\r\n            null, 'Thank you!', 'Ok');\r\n          $scope.textname = \"\";\r\n          $scope.textemail = \"\";\r\n          $scope.textprayer = \"\";\r\n          $scope.$apply();\r\n\r\n        }\r\n      }\r\n    });\r\n  }\r\n\r\n}",
+          "datatemplate": "<style type=\"text/css\">\r\n  #fixedHeaderContent {\r\n    display: none;\r\n  }\r\n  \r\n  .footerGroupIcons div div img {\r\n    -webkit-filter: grayscale(100%);\r\n    /* Chrome, Safari, Opera */\r\n    filter: grayscale(100%);\r\n  }\r\n  \r\n  .footerGroupIcons div div a div {\r\n    -webkit-filter: grayscale(100%);\r\n    /* Chrome, Safari, Opera */\r\n    filter: grayscale(100%);\r\n  }\r\n  \r\n  .textBox {\r\n    overflow: auto;\r\n    outline: none;\r\n    font-size: 18px;\r\n    width: 100%;\r\n    resize: none;\r\n    border: 1px solid #f0ad4e;\r\n  }\r\n  \r\n  .app-body {\r\n    background-color: #efefef;\r\n    background: #efefef;\r\n  }\r\n<\/style>\r\n\r\n<div style=\"padding:20px;\">\r\n  <h style=\"font-size:19px; color: #3d6796; font-weight: bold;\">Take a moment to send us your valuable feedback and suggestions. Members of the Allen community will look into it<\/h>\r\n  <br>\r\n  <br>\r\n  <div>\r\n    <input class=\"form-control input-lg\" type=\"text\" name=\"input\" ng-model=\"textname\" placeholder=\"Name\" required>\r\n  <\/div>\r\n  <br>\r\n  <div>\r\n    <input class=\"form-control input-lg\" type=\"email\" name=\"input\" ng-model=\"textemail\" placeholder=\"Email ID\" required>\r\n  <\/div>\r\n  <br>\r\n  <div>\r\n    <textarea class=\"textBox\" rows=\"8\" cols=\"50\" ng-model=\"textprayer\" placeholder=\"&nbsp;&nbsp;Feedback\"><\/textarea>\r\n  <\/div>\r\n  <br>\r\n  <br>\r\n  <div class=\"btn btn-primary btn-block\" ng-click=\"sendText()\">Submit<\/div>\r\n<\/div>\r\n<br>\r\n<br>\r\n<br>\r\n<br>"
+        }
+      ]
+    },
+    {
+      "id": 96450,
+      "name": "News267",
+      "displayname": "News",
+      "logo": "IND1814/News267.png",
+      "logourl": "IND1814/News267.png",
+      "description": "News",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "News267",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorNews267(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  var data1 = $compile($(pagedef.datatemplate))($scope);\r\n  $(\"#appContent\").append(data1);\r\n  $.blockUI({\r\n    message: '<div id=\"floatingBarsG\"><div class=\"blockG\" id=\"rotateG_01\"><\/div><div class=\"blockG\" id=\"rotateG_02\"><\/div><div class=\"blockG\" id=\"rotateG_03\"><\/div><div class=\"blockG\" id=\"rotateG_04\"><\/div><div class=\"blockG\" id=\"rotateG_05\"><\/div><div class=\"blockG\" id=\"rotateG_06\"><\/div><div class=\"blockG\" id=\"rotateG_07\"><\/div><div class=\"blockG\" id=\"rotateG_08\"><\/div><\/div><div><\/div>'\r\n  });\r\n  var rssreaderUrl = \"https://kryptosda.kryptosmobile.com/kryptosds/rss/rssreader\";\r\n  var param = {\r\n    \"url\": pagedef.url\r\n  };\r\n  $http.post(rssreaderUrl, param, '').success(function(data, status, headers, config) {\r\n    $scope.feeds = data.feed.entries;\r\n    $rootScope.feeds = data.feed.entries;\r\n    $.unblockUI();\r\n  }).error(function(error, status, header, config) {\r\n    alert(JSON.stringify(error));\r\n    $.unblockUI();\r\n  });\r\n  $scope.openFeed = function(index) {\r\n    $rootScope.feedDetails = $scope.feeds[index];\r\n    $location.path(\"/app/News267/News267Details\");\r\n  }\r\n\r\n  setTimeout(function() {\r\n    var imgSource = $(\"#content img\").attr('src');\r\n    if (imgSource) {\r\n      imgSource = \"http://www.felician.edu/\" + imgSource;\r\n\r\n      $(\"#content img\").attr(\"src\", imgSource);\r\n\r\n    }\r\n\r\n  }, 500);\r\n  \r\n   $scope.convertToDate = function(stringDate) {\r\n    var dateOut = new Date(stringDate);\r\n    dateOut.setDate(dateOut.getDate());\r\n    return dateOut;\r\n  };\r\n}",
+          "url": "https://www.felician.edu/felcian-university-news.xml",
+          "datatemplate": "<div ng-repeat=\"f in feeds\" style=\"background:#fff;background-color:#fff;padding:15px;border-bottom:1px solid #000;\" ng-click=\"openFeed($index)\">\r\n<div style=\"font-size:16px;\">{{f.title}}<\/div>\r\n<span ng-bind=\"convertToDate(f.pubDate) | date:'EEE, MMM dd, y h:mm a'\"><\/span><\/div>"
+        },
+        {
+          "pageid": "News267Details",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorNews267Details(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  var data1 = $compile($(pagedef.datatemplate))($scope);\r\n  $(\"#appContent\").append(data1);\r\n  $scope.feedDetails = $rootScope.feedDetails;\r\n  $scope.openWebPage = function(url) {\r\n    window.open(url, \"_blank\", \"location=no\");\r\n  }\r\n  $scope.trustHtml = function(dt) {\r\n    return $sce.trustAsHtml(dt);\r\n  }\r\n  \r\n    $scope.convertToDate = function(stringDate) {\r\n    var dateOut = new Date(stringDate);\r\n    dateOut.setDate(dateOut.getDate());\r\n    return dateOut;\r\n  };\r\n\r\n  \r\n}",
+          "datatemplate": "<style>\r\n  .scrollable-content {\r\n    background: #fff !important;\r\n  }\r\n<\/style>\r\n\r\n<div style=\"padding:15px;height:100%;background:#fff;background-color:#fff;\">\r\n  <div style=\"font-size:16px\">{{feedDetails.title}}<\/div>\r\n  <span ng-bind=\"convertToDate(feedDetails.pubDate) | date:'EEE, MMM dd, y h:mm a'\"><\/span><\/div>\r\n  <!--<div class=\"small\">{{feedDetails.pubDate}}<\/div>-->\r\n  <hr>\r\n  <div style=\"font-size:14px;padding:15px;\" ng-bind-html=\"trustHtml(feedDetails.content);\"><\/div>\r\n  <br>\r\n  <div style=\"padding:15px;\"class=\"btn btn-primary btn-block\" ng-click=\"openWebPage(feedDetails.link);\">Open Link<\/div>\r\n<\/div>\r\n<br>\r\n<br>"
+        }
+      ]
+    },
+    {
+      "id": 96440,
+      "name": "Twitter249",
+      "displayname": "Twitter",
+      "logo": "IND1814/Twitter249.png",
+      "logourl": "IND1814/Twitter249.png",
+      "description": "Twitter",
+      "appFeatureType": "Public",
+      "roles": null,
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "Twitter249",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorTwitter249(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n  if (window.device) {\r\n    $.blockUI({\r\n        message: '<div id=\"floatingBarsG\"><div class=\"blockG\" id=\"rotateG_01\"><\/div><div class=\"blockG\" id=\"rotateG_02\"><\/div><div class=\"blockG\" id=\"rotateG_03\"><\/div><div class=\"blockG\" id=\"rotateG_04\"><\/div><div class=\"blockG\" id=\"rotateG_05\"><\/div><div class=\"blockG\" id=\"rotateG_06\"><\/div><div class=\"blockG\" id=\"rotateG_07\"><\/div><div class=\"blockG\" id=\"rotateG_08\"><\/div><\/div><div><\/div>'\r\n      });\r\n  }\r\n  var iabRef = window.open(pagedef.url, \"_blank\", \"location=no,hidden=yes,enableViewportScale=yes,clearcache=yes\");\r\n  var hideBlockUi = function() {\r\n    $.unblockUI();\r\n    iabRef.show();\r\n  };\r\n  var iabClose = function(data) {\r\n    $.unblockUI();\r\n    iabRef.removeEventListener(\"exit\", iabClose);\r\n    window.location.href = \"index.html#home\";\r\n  };\r\n  iabRef.addEventListener(\"exit\", iabClose);\r\n  var loadStop = function(data) {\r\n    hideBlockUi();\r\n    iabRef.removeEventListener(\"loadstop\", loadStop);\r\n  };\r\n  iabRef.addEventListener(\"loadstop\", loadStop);\r\n}",
+          "url": "https://twitter.com/ALLENkota"
+        }
+      ]
+    },
+    {
+      "id": 96452,
+      "name": "Videos",
+      "displayname": "Videos",
+      "logo": "IND1814/Videos.png",
+      "logourl": "IND1814/Videos.png",
+      "description": "Campus Videos",
+      "appFeatureType": "Public",
+      "roles": "public",
+      "showInDock": false,
+      "showInHome": true,
+      "networkrequired": true,
+      "analytics": false,
+      "pages": 
+      [
+        {
+          "pageid": "Videos",
+          "pageTemplate": "<div><\/div>",
+          "datatemplate": "<div class=\"media-list list-group\">\r\n    <a href=\"#app/Videos/VideosVideosDetails?index={{$index}}\" class=\"media list-group-item\" ng-repeat=\"video in videos\">\r\n        <div class=\"pull-left\"><img class=\"media-object\" src=\"{{video.snippet.thumbnails.default.url}}\"><\/img>\r\n        <\/div>\r\n        <div class=\"media-body\">\r\n            <h4 class=\"media-heading\">{{video.snippet.title}}<\/h4>\r\n            <p class=\"disabled\">Published On {{video.snippet.publishedAt | date:'medium'}}<\/p>\r\n        <\/div>\r\n    <\/a>\r\n<\/div>",
+          "url": "https://www.googleapis.com/youtube/v3/search?videoEmbeddable=true&order=date&part=snippet&channelId=UCgUeJ2Gv7rJtMBkQF2Ppn4A&type=video&maxResults=50&key=AIzaSyCsgCy_wu22gBBf-jewPk76QN9mUzevkGw",
+          "pageprocessor": "function pageprocessorVideos(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) { \r\n\r\n $.blockUI();\r\n    $http.get(pagedef.url).success(function(data) {\r\n        console.log(JSON.stringify(data));\r\n        $scope.videos = data.items;\r\n        $rootScope.videos = data.items;\r\n        var data1 = $compile($(pagedef.datatemplate))($scope);\r\n        $(\"#appContent\").append(data1);\r\n        $.unblockUI();\r\n    }).error(function(data) {\r\n        $.unblockUI();\r\n    });\r\n}"
+        },
+        {
+          "pageid": "VideosVideosDetails",
+          "pageTemplate": "<div><\/div>",
+          "pageprocessor": "function pageprocessorVideosVideosDetails(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {\r\n\r\n  var video = $rootScope.videos[$routeParams.index];\r\n  var videoID = video.id.videoId\r\n\r\n  var url = \"https://www.googleapis.com/youtube/v3/videos?id=\" + videoID + \"&key=AIzaSyABYcg8dh0PuvHuGygJchQVSgca2UxMyws&part=snippet,contentDetails,statistics,status\";\r\n  $http.get(url).success(function(data) {\r\n\r\n    console.log(JSON.stringify(data));\r\n    $scope.title = data.items[0].snippet.localized.title;\r\n\r\n    $scope.trustSrc = function() {\r\n      return $sce.trustAsResourceUrl(\"https://www.youtube.com/embed/\" + videoID);\r\n    };\r\n    $scope.description = data.items[0].snippet.localized.description;\r\n\r\n    var data1 = $compile($(pagedef.datatemplate))($scope);\r\n    $(\"#appContent\").append(data1);\r\n\r\n  }).error(function(data) {\r\n    $.unblockUI();\r\n  });\r\n  \r\n   try {\r\n    var onPause = function() {\r\n      $('iframe').attr('src', $('iframe').attr('src'));\r\n    }\r\n\r\n    document.addEventListener(\"pause\", onPause, false);\r\n  } catch (e) {\r\n    // alert(e)\r\n  }\r\n\r\n}",
+          "datatemplate": "<style>\r\n  #branding {\r\n    display: none;\r\n  }\r\n  \r\n  .scrollable-content {\r\n    background: #fff !important;\r\n  }\r\n  \r\n  iframe {\r\n    display: inline-block;\r\n    margin: auto;\r\n  }\r\n<\/style>\r\n<div class=\"jumbotron\" style=\"background:#fff;\">\r\n  <h4 style=\"color:#fff;padding:10px;text-align:center;\">{{title}}<\/h4>\r\n  <div style=\"text-align:center\">\r\n    <iframe ng-src=\"{{trustSrc()}}\" frameborder=\"0\" allowfullscreen target=\"self\"><\/iframe>\r\n  <\/div>\r\n  <h5 style=\"color:#fff;padding:10px;text-align:center;\">{{description}}<\/h5>\r\n<\/div>"
+        },
+        {
+          "pageid": "VideosPage3",
+          "pageTemplate": "<div><\/div>",
+          "datatemplate": "<div>Sample Data<\/div>",
+          "endpoint": "",
+          "pageprocessor": "function pageprocessorVideosPage3(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {var data1 = $compile($(pagedef.datatemplate))($scope);$(\"#appContent\").append(data1);}"
+        },
+        {
+          "pageid": "VideosPage4",
+          "pageTemplate": "<div><\/div>",
+          "datatemplate": "<div>Sample Data<\/div>",
+          "endpoint": "",
+          "pageprocessor": "function pageprocessorVideosPage4(pagedef, $scope, $routeParams, $compile, $http, $rootScope, $sce, $window, $location) {var data1 = $compile($(pagedef.datatemplate))($scope);$(\"#appContent\").append(data1);}"
+        }
+      ]
+    }
+  ],
+  "pages": 
+  [
+  ]
+}
